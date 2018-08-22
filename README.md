@@ -12,25 +12,25 @@ $ gpg --full-generate-key
 
 ### List keys
 ```
-$ gpg --list-keys
+$ gpg --list-keys --fingerprint
+```
+
+### Export my public key
+```
+$ gpg --export -a "My Name" > myname.key
 ```
 
 ### Sending and encrypting a file
-1. First, get recipient's public key.
-2. Import that key:
+1. First, get recipient's public key and send them mine.
+2. Import their key:
     ```
     $ gpg --import recipient.key
     ```
-   Check the key was imported successfully by listing the keys. 
-3. Export my public key and send it to the recipient (so that they can decrypt the file):
-    ```
-    $ gpg --export -a "My Name" > myname.key
-    ```
-4. Encrypt file for recipient:
+   Check that the key was imported successfully by listing the keys available on my machine.
+3. Encrypt file for recipient:
     ```
     $ gpg -e -u "My Name" -r "Their Name" test.txt
     ```
-
 
 ### Decrypting a file
 ```
