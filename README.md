@@ -17,14 +17,14 @@ $ gpg --list-keys --fingerprint
 
 ### Export my public key
 ```
-$ gpg --export -a "My Name" > myname.key
+$ gpg --export -a "My Name" > myname.asc
 ```
 
 ### Sending and encrypting a file
 1. First, get recipient's public key and send them mine.
 2. Import their key:
     ```
-    $ gpg --import recipient.key
+    $ gpg --import recipient.asc
     ```
    Check that the key was imported successfully by listing the keys available on my machine.
 3. Encrypt file for recipient:
